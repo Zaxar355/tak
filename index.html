@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Захар Клущин">
+    <meta name="description" content="Тестовая страница">
+    <meta name="keywords" content="Лучщие друзья,Максим Юдин,Никитат Калинин">
+
+    <title>Тик Ток музыка</title>
+    <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+  <div  class="twoy">
+
+
+
+        <div class="music"> KEEP UP (№1)
+            <p>Odetari</p>
+        </div>
+
+        <audio class="audio-player" src="https://rus.hitmotop.com/get/music/20240927/Odetari_-_KEEP_UP_78234564.mp3"></audio>
+        <button onclick="playAudio(this)">▶ </button>
+
+        <a  href="https://rus.hitmotop.com/get/music/20240927/Odetari_-_KEEP_UP_78234564.mp3" downlaod="">
+
+          <div class="don">ЖМЯКНИ чтобы скачать</div>
+
+
+        </a>
+  </div>
+  <div class="two">
+    <div class="music"> Tontagem Tomoda (№2)
+        <p>MXZI</p>
+    </div>
+
+    <audio class="audio-player" src="https://rus.hitmotop.com/get/music/20250410/MXZI_-_MONTAGEM_TOMADA_79129874.mp3"></audio>
+    <button onclick="playAudio(this)">▶ </button>
+
+
+    <a  href="https://rus.hitmotop.com/get/music/20250410/MXZI_-_MONTAGEM_TOMADA_79129874.mp3 " downlaod="">
+
+      <div class="don">ЖМЯКНИ чтобы скачать</div>
+
+
+    </a>
+  </div>
+  <div class="three">
+    <div class="music"> Without Me      (№3)
+        <p>Eminem</p>
+    </div>
+
+    <audio class="audio-player" src="https://rus.hitmotop.com/get/music/20170830/Eminem_-_Without_Me_47829431.mp3"></audio>
+    <button onclick="playAudio(this)">▶ </button>
+
+
+    <a  href="https://rus.hitmotop.com/get/music/20170830/Eminem_-_Without_Me_47829431.mp3" downlaod="">
+
+      <div class="don">ЖМЯКНИ чтобы скачать</div>
+
+
+    </a>
+  </div>
+  <div  class="two">
+    <div class="music">Passo Bem Solto (№4)
+      <p>ATLXS</p>
+    </div>
+
+    <audio class="audio-player" src="https://rus.hitmotop.com/get/music/20241010/ATLXS_-_PASSO_BEM_SOLTO_Super_Slowed_78312251.mp3"></audio>
+    <button onclick="playAudio(this)">▶ </button>
+
+      <a  href=""downlaod="" >
+
+        <div class="don">ЖМЯКНИ чтобы скачать</div>
+
+
+
+      </a>
+
+
+  </div>
+  <div class="twoy">
+
+
+
+
+
+    <div class="music">Virdao Em Voce (№5)
+        <p>Dj Guuga,Mc Livinho</p>
+    </div>
+
+    <audio class="audio-player" src="https://rus.hitmotop.com/get/music/20190705/Dj_Guuga_Mc_Livinho_-_Vidrado_Em_Voc_65286439.mp3"></audio>
+    <button onclick="playAudio(this)">▶ </button>
+
+
+    <a href="https://rus.hitmotop.com/get/music/20190705/Dj_Guuga_Mc_Livinho_-_Vidrado_Em_Voc_65286439.mp3"downlaod="" >
+
+      <div class="don">ЖМЯКНИ чтобы скачать</div>
+
+    </a>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="container">
+          <img id="rotating-image" src="https://click-or-die.ru/app/uploads/2024/06/photo_2024-06-06_18-33-01.jpg" alt="Кликабельное изображение">
+      </div>
+
+      <script>
+          document.getElementById('rotating-image').addEventListener('click', function() {
+              this.classList.toggle('rotate');
+          });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        function playAudio(button) {
+          // Находим ближайший к кнопке аудио-элемент с классом "audio-player"
+          const audio = button.previousElementSibling;
+
+          if (audio.paused) {
+            // Сначала ставим на паузу все аудио, кроме текущего
+            document.querySelectorAll('.audio-player').forEach(otherAudio => {
+              if (otherAudio !== audio) {
+                otherAudio.pause();
+                // Возвращаем текст кнопок других плееров в исходное состояние
+                const otherButton = otherAudio.nextElementSibling;
+                if (otherButton) otherButton.textContent = "▶ ";
+              }
+            });
+            // Запускаем текущее аудио
+            audio.play();
+            button.textContent = "⏸ ";
+          } else {
+            audio.pause();
+            button.textContent = "▶ ";
+          }
+        }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
